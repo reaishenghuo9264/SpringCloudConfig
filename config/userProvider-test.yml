@@ -7,7 +7,7 @@
         defaultZone: http://localhost:8888/eureka,http://localhost:8889/eureka
   
   version:  UserProvider66666
-  spring:
+  spring: 
     jpa:
       hibernate:
         ddl-auto: update
