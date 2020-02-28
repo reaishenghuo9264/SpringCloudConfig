@@ -21,7 +21,7 @@
       type: com.alibaba.druid.pool.DruidDataSource
 
 
-ProviderVersion: UserProvider001:7.7.7V
+version:  UserProvider001:7.7.7V
 
 
 
