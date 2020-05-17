@@ -1,11 +1,12 @@
   server:
-    port: 8021
+    port: 8001
 
-#111
+
+
   spring:
     jpa:
       hibernate:
-        ddl-auto: update
+        ddl-auto: update  #jpa策咯
       show-sql: true
     application:
       name: UserProvider1
@@ -16,9 +17,22 @@
       driver-class-name: com.mysql.cj.jdbc.Driver
       type: com.alibaba.druid.pool.DruidDataSource
 
+      #config_server配置  cloud 一定要在 eureka 配置项之前。
+    cloud:
+      config:
+        discovery:
+          enabled: true
+          service-id: configServer
+        profile: prod
+        label: master
 
+  eureka:
+    client:
+      service-url:
+        defaultZone: http://localhost:8888/eureka,http://localhost:8889/eureka
 
-
-
-
-
+  # management:
+#   endpoints:
+#     web:
+#      exposure:
+#        include: refresh,health,info
